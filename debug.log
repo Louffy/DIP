@@ -1,0 +1,285 @@
+Exception on /data/code_log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 95, in show_log
+    data=db.findQuery(name,q)
+  File "/home/pkuas/zhangfx/hello/pymongodb.py", line 29, in findQuery
+    posts = self.db[collection].find({"loc":{"$regex":query}})
+  File "build/bdist.linux-x86_64/egg/pymongo/database.py", line 209, in __getitem__
+    return self.__getattr__(name)
+  File "build/bdist.linux-x86_64/egg/pymongo/database.py", line 199, in __getattr__
+    return Collection(self, name)
+  File "build/bdist.linux-x86_64/egg/pymongo/collection.py", line 100, in __init__
+    "of %s" % (basestring.__name__,))
+TypeError: name must be an instance of basestring
+Exception on /data/code_log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 95, in show_log
+    data=db.findQuery(str(name),str(q))
+  File "/home/pkuas/zhangfx/hello/pymongodb.py", line 29, in findQuery
+    posts = self.db[collection].find({"loc":{"$regex":query}})
+  File "build/bdist.linux-x86_64/egg/pymongo/database.py", line 209, in __getitem__
+    return self.__getattr__(name)
+  File "build/bdist.linux-x86_64/egg/pymongo/database.py", line 199, in __getattr__
+    return Collection(self, name)
+  File "build/bdist.linux-x86_64/egg/pymongo/collection.py", line 100, in __init__
+    "of %s" % (basestring.__name__,))
+TypeError: name must be an instance of basestring
+Exception on /data/code_log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 95, in show_log
+    data=db.findQuery(name,q)
+  File "/home/pkuas/zhangfx/hello/pymongodb.py", line 29, in findQuery
+    posts = self.db[collection].find({"loc":{"$regex":query}})
+  File "build/bdist.linux-x86_64/egg/pymongo/database.py", line 209, in __getitem__
+    return self.__getattr__(name)
+  File "build/bdist.linux-x86_64/egg/pymongo/database.py", line 199, in __getattr__
+    return Collection(self, name)
+  File "build/bdist.linux-x86_64/egg/pymongo/collection.py", line 100, in __init__
+    "of %s" % (basestring.__name__,))
+TypeError: name must be an instance of basestring
+Exception on /data/script/dosfnew.perl [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1566, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+Exception on /data/script/dosfnew.perl [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1577, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/wrappers.py", line 827, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/wrappers.py", line 57, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/test.py", line 855, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'dict' object is not callable
+Exception on /data/script/dosfnew.perl [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1577, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/wrappers.py", line 827, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/test.py", line 855, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'dict' object is not callable
+Exception on /data/script/dosfnew.perl [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1577, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/wrappers.py", line 827, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/test.py", line 855, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'dict' object is not callable
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 63, in index
+    check_login()
+  File "/home/pkuas/zhangfx/hello/hello.py", line 31, in check_login
+    if session['logged_in']:
+  File "/usr/local/lib/python2.7/site-packages/werkzeug/local.py", line 368, in <lambda>
+    __getitem__ = lambda x, i: x._get_current_object()[i]
+KeyError: 'logged_in'
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 63, in index
+    check_login()
+  File "/home/pkuas/zhangfx/hello/hello.py", line 31, in check_login
+    if session['logged_in']:
+  File "/usr/local/lib/python2.7/site-packages/werkzeug/local.py", line 368, in <lambda>
+    __getitem__ = lambda x, i: x._get_current_object()[i]
+KeyError: 'logged_in'
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 63, in index
+    check_login()
+  File "/home/pkuas/zhangfx/hello/hello.py", line 34, in check_login
+    render_template('login.html',error=error)
+NameError: global name 'error' is not defined
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 67, in index
+    return render_template('login.html',error=error)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/pkuas/zhangfx/hello/templates/login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/home/pkuas/zhangfx/hello/templates/layout.html", line 24, in top-level template code
+    {% block body %}{% endblock %}
+  File "/home/pkuas/zhangfx/hello/templates/login.html", line 125, in block "body"
+    <form action="{{ url_for('sign_up') }}" method="post" class="form-horizontal">
+  File "/usr/local/lib/python2.7/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/usr/local/lib/python2.7/site-packages/werkzeug/routing.py", line 1620, in build
+    raise BuildError(endpoint, values, method)
+BuildError: ('sign_up', {}, None)
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 61, in index
+    return render_template('login.html',error=error)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/pkuas/zhangfx/hello/templates/login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/home/pkuas/zhangfx/hello/templates/layout.html", line 24, in top-level template code
+    {% block body %}{% endblock %}
+  File "/home/pkuas/zhangfx/hello/templates/login.html", line 125, in block "body"
+    <form action="{{ url_for('sign_up') }}" method="post" class="form-horizontal">
+  File "/usr/local/lib/python2.7/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/usr/local/lib/python2.7/site-packages/werkzeug/routing.py", line 1620, in build
+    raise BuildError(endpoint, values, method)
+BuildError: ('sign_up', {}, None)
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/pkuas/zhangfx/hello/hello.py", line 61, in index
+    return render_template('login.html',error=error)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/pkuas/zhangfx/hello/templates/login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/home/pkuas/zhangfx/hello/templates/layout.html", line 24, in top-level template code
+    {% block body %}{% endblock %}
+  File "/home/pkuas/zhangfx/hello/templates/login.html", line 125, in block "body"
+    <form action="{{ url_for('sign_up') }}" method="post" class="form-horizontal">
+  File "/usr/local/lib/python2.7/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/usr/local/lib/python2.7/site-packages/werkzeug/routing.py", line 1620, in build
+    raise BuildError(endpoint, values, method)
+BuildError: ('sign_up', {}, None)

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if c_data %}
+ {{ pagination.info|safe }}
+{{ pagination.links|safe }}
+  
+ 
+  <div class="table-responsive">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+          <th>#</th>
+          <th>vcs</th>
+          <th>repo</th>
+          <th>n_dev</th>
+          <th>n_cmt</th>
+          <th>begin_t</th>
+          <th>end_t</th>
+          <th>loc</th>
+        </tr>
+      </thead>
+      <tbody>
+  
+  {% for d in c_data %}
+  <tr>    
+          <td>{{ loop.index + (page-1)*per_page }}</td>
+          <td>{{ d['vcs'] }}</td>
+          <td>{{ d['repo'] }}</td>
+          <td>{{ d['n_dev'] }}</td>
+          <td>{{ d['n_cmt'] }}</td>
+          <td>{{ d['begin_t'] }}</td>
+          <td>{{ d['end_t'] }}</td>
+          <td>{{ d['loc'] }}</td>
+        </tr>
+    
+  {% else %}
+    <li><em>Unbelievable.  No data here so far</em>
+  {% endfor %}
+ </tbody>
+    </table>
+  </div>
+ 
+  
+
+   </table>
+
+ {{ pagination.links|safe }}
+  {% endif %}
+
+ 
+{% endblock %}
+
+
+

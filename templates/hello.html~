@@ -1,0 +1,7 @@
+<!doctype html>
+<title>Hello from Flask</title>
+{% if name %}
+	<h1>zfx Hello {{ name }}!</h1>
+{% else %}
+	<h1>zfx Hello no name!</h1>
+{% endif %}

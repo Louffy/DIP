@@ -1,0 +1,15 @@
+import os
+os.environ['PYTHON_EGG_CACHE']='/home/pkuas/zhangfx/tmp'
+from flask import Flask
+from pymongodb import mongoDB
+from paginate import Pagination
+import os.path
+import sys
+reload(sys)
+app=Flask(__name__)
+@app.route('/')
+def hello_world():
+    return 'Hello World zzzzzzzzzzz'
+
+if __name__=='__main__':
+    app.run()

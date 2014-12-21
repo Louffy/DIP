@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Summary</h1>
+
+          <div class="panel panel-default">
+  <div class="panel-body">
+ 	<h5>Data: code</h5><h5>VCS: {{ name }}</h5><h5>Total: {{ total }}</h5>
+ </div>
+    
+
+</div>
+
+          <h2 class="sub-header">Repository list</h2><form class="navbar-form navbar-right" action="{{ url_for('show_script') }}" method="get"><input class="btn btn-primary active" type="submit" value="Search"> 
+            <input type="text" class="form-control" placeholder="Search..." name="q">
+            <input type="hidden" class="form-control" placeholder="Search..." name="type" value={{ name }}>
+          </form>
+
+         {% if c_data %}
+ {{ pagination.info|safe }}
+ 
+{{ pagination.links|safe }}
+  
+ 
+
+  <div class="table-responsive">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+          <th>#</th>
+          <th>name</th>
+          <th>loc</th>
+          <th>purpose</th>
+          <th>input</th>
+          <th>output</th>
+          <th>usage</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+  
+  {% for d in c_data %}
+  <tr>    
+          <td>{{ loop.index + (page-1)*per_page }}</td>
+          <td>{{ d['script_name'] }}</td>
+          <td>{{ d['loc'] }}</td>
+          <td>{{ d['purpose'] }}</td>
+          <td>{{ d['input'] }}</td>
+          <td>{{ d['output'] }}</td>
+          <td>{{ d['usage'] }}</td>
+          
+        </tr>
+    
+  {% else %}
+    <li><em>Unbelievable.  No data here so far</em>
+  {% endfor %}
+ </tbody>
+    </table>
+  </div>
+</table>
+
+ {{ pagination.links|safe }}
+  {% endif %}
+        </div>
+</div>
+</div>
+{% endblock %}

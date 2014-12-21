@@ -1,0 +1,9 @@
+--2014-12-02 20:55:55--  https://code.google.com/p/chromium/issues/detail?id=3
+Resolving code.google.com... 173.194.72.101, 173.194.72.100, 173.194.72.139, ...
+Connecting to code.google.com|173.194.72.101|:443... failed: Connection timed out.
+Connecting to code.google.com|173.194.72.100|:443... failed: Connection timed out.
+Connecting to code.google.com|173.194.72.139|:443... failed: Connection timed out.
+Connecting to code.google.com|173.194.72.113|:443... failed: Connection timed out.
+Connecting to code.google.com|173.194.72.102|:443... failed: Connection timed out.
+Connecting to code.google.com|173.194.72.138|:443... failed: Connection timed out.
+Connecting to code.google.com|2404:6800:4008:c00::8a|:443... failed: Network is unreachable.

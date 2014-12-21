@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Summary</h1>
+
+          <div class="panel panel-default">
+  <div class="panel-body">
+ 	<h5>Data: code</h5><h5>VCS: {{ name }}</h5><h5>Total: {{ total }}</h5>
+ </div>
+    
+
+</div>
+
+          <h2 class="sub-header">Repository list</h2><form class="navbar-form navbar-right" action="{{ url_for('show_log') }}" method="get"><input class="btn btn-primary active" type="submit" value="Search"> 
+            <input type="text" class="form-control" placeholder="Search..." name="q">
+            <input type="hidden" class="form-control" placeholder="Search..." name="type" value={{ name }}>
+          </form>
+
+         {% if c_data %}
+ {{ pagination.info|safe }}
+ 
+{{ pagination.links|safe }}
+  
+ 
+
+  <div class="table-responsive">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+          <th>#</th>
+          <th>vcs</th>
+          <th>repo</th>
+          <th>n_dev</th>
+          <th>n_cmt</th>
+          <th>begin_t</th>
+          <th>end_t</th>
+          <th>loc</th>
+        </tr>
+      </thead>
+      <tbody>
+  
+  {% for d in c_data %}
+  <tr>    
+          <td>{{ loop.index + (page-1)*per_page }}</td>
+          <td>{{ d['vcs'] }}</td>
+          <td>{{ d['repo'] }}</td>
+          <td>{{ d['n_dev'] }}</td>
+          <td>{{ d['n_cmt'] }}</td>
+          <td>{{ d['begin_t'] }}</td>
+          <td>{{ d['end_t'] }}</td>
+          <td>{{ d['loc'] }}</td>
+        </tr>
+    
+  {% else %}
+    <li><em>Unbelievable.  No data here so far</em>
+  {% endfor %}
+ </tbody>
+    </table>
+  </div>
+</table>
+
+ {{ pagination.links|safe }}
+  {% endif %}
+        </div>
+</div>
+</div>
+{% endblock %}

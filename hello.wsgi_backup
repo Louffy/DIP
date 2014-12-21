@@ -1,0 +1,5 @@
+
+import sys
+sys.path.append("/var/www/html/projects/datashare/hello/")
+from hello import app as application
+sys.path.insert(0,'/var/www/html/projects/datashare/hello/')
