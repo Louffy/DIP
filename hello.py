@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 import os
-os.environ['PYTHON_EGG_CACHE']= '/home/pkuas/zhangfx/tmp'
+os.environ['PYTHON_EGG_CACHE']= '/var/pkuas/tmp'
 from flask import Flask,url_for,render_template,g,current_app,request,abort,redirect,flash,session,escape
 from paginate import Pagination
 from pymongodb import mongoDB
@@ -21,7 +21,7 @@ db = mongoDB('datashare')
 data_types=['code_log']
 log_types=['log']
 
-file_handler=FileHandler("/home/pkuas/zhangfx/hello/debug.log","a")
+file_handler=FileHandler("/var/pkuas/debug.log","a")
 #file_handler=FileHandler("/var/www/hello/debug.log","a")
 file_handler.setLevel(logging.WARNING)
 app.logger.addHandler(file_handler)
@@ -43,6 +43,10 @@ def login():
             return redirect(url_for('index'))
       #return redirect(url_for('show_log'))
     return render_template('login.html',error=error)
+    
+@app.route('/sign_up',methods=['GET','POST'])
+def sign_up():
+    return "test"
 
 @app.route('/logout')
 def logout():
