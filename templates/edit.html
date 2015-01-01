@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Update {{ type }} data</h1>
+
+          <div class="panel panel-default">
+  <div class="panel-body ">
+ 	
+<div class="tab-pane" id="signup">
+            <form action="{{ url_for('update_data') }}" method="post" class="form-horizontal">
+            <fieldset>
+            <!-- Sign Up Form -->
+            <!-- Text input-->
+            {% if data %}
+            {% for d in data %}
+            <div class="control-group">
+
+              <label class="control-label" for="Email">{{d}}:</label>
+              <input class="form-control" id="focusedInput" type="text" value="{{ onedata[d] }}">
+            </div>
+           
+            {% endfor %}
+            
+            {% endif %}
+            <!-- Multiple Radios (inline) -->
+            <br>
+            
+            
+            <!-- Button -->
+            <div class="control-group">
+              <label class="control-label" for="confirmsignup"></label>
+              <div class="controls">
+                <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Save</button>
+              </div>
+    
+              </form>
+        </div>
+</div>
+</div>
+{% endblock %}

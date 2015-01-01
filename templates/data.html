@@ -3,17 +3,24 @@
 
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Summary</h1>
+          <h2 class="page-header">Summary</h2>
 
           <div class="panel panel-default">
-  <div class="panel-body">
- 	<h5>Data: code</h5><h5>VCS: {{ name }}</h5><h5>Total: {{ total }}</h5>
+  <div class="panel-body ">
+ 	<h4>Data: code</h4><h4>VCS: {{ name }}</h4><h4>Total: {{ total }}</h4>
+<form class="navbar-form navbar-right"
+  action="{{ url_for('add_data') }}" method="get">
+
+  <input  class="btn btn-success active" type="submit" value="add new data"> 
+           
+            <input type="hidden" class="form-control" placeholder="Search..." name="type" value={{ name }}>
+          </form>
  </div>
     
 
 </div>
 
-          <h2 class="sub-header">Repository list</h2><form class="navbar-form navbar-right" action="{{ url_for('show_log') }}" method="get"><input class="btn btn-primary active" type="submit" value="Search"> 
+          <h2 class="sub-header">Repository list</h2><form class="navbar-form navbar-right" action="{{ url_for('show_log') }}" method="get"><input class="btn btn-success active" type="submit" value="Search"> 
             <input type="text" class="form-control" placeholder="Search..." name="q">
             <input type="hidden" class="form-control" placeholder="Search..." name="type" value={{ name }}>
           </form>
@@ -45,7 +52,7 @@
   <tr>    
           <td>{{ loop.index + (page-1)*per_page }}</td>
           <td>{{ d['vcs'] }}</td>
-          <td>{{ d['repo'] }}</td>
+          <td><a href="{{ url_for('show_data',type=name,repo=d['repo']) }}">{{ d['repo'] }}</a></td>
           <td>{{ d['n_dev'] }}</td>
           <td>{{ d['n_cmt'] }}</td>
           <td>{{ d['begin_t'] }}</td>

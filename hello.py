@@ -27,6 +27,10 @@ file_handler.setLevel(logging.WARNING)
 app.logger.addHandler(file_handler)
 
 
+data_schama={
+    'git':['vcs','repo','n_dev','n_cmt','begin_t','end_t','loc']
+}
+
 
 @app.route('/login',methods=['GET','POST'])                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 def login():
@@ -43,7 +47,7 @@ def login():
             return redirect(url_for('index'))
       #return redirect(url_for('show_log'))
     return render_template('login.html',error=error)
-    
+
 @app.route('/sign_up',methods=['GET','POST'])
 def sign_up():
     return "test"
@@ -106,12 +110,39 @@ def showdata():
 	types=data_types
 	return render_template('data.html')
 
+@app.route('/data/add_data')
+def add_data():
+    name=request.args.get('type')
+    table=data_schama[name]
+    #return table[2]
+    return render_template('add.html',type=name,data=table)
+@app.route('/data/onedata',methods=['GET'])
+def show_data():
+    name=request.args.get('type')
+    repo=request.args.get('repo')
+    data=db.findOneByName(str(name),'repo',str(repo))
+    return render_template('onedata.html',type=name,data=data_schama[name],onedata=data)
+
+@app.route('/data/edit',methods=['GET','POST'])
+def edit_data():
+    name=request.args.get('type')
+    repo=request.args.get('repo')
+    data=db.findOneByName(str(name),'repo',str(repo))
+    return render_template('edit.html',type=name,data=data_schama[name],onedata=data)
+
+@app.route('/data/delete')
+def delete_data():
+    return "dddddd"
+
+@app.route('/data/update',methods=['GET','POST'])
+def update_data():
+    return "dddddd"
+
 @app.route('/data/code_log',methods=['GET'])
 def show_log():
     #console.log("data start")
     #name=request.args.get('type')
     name=request.args.get('type')
-    #print 'hello'
     c_data=[]
     #return render_template('showdata.html',entries=entries)
     search = False
