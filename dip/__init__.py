@@ -32,5 +32,7 @@ log_types=['log']
 
 file_handler=FileHandler("/var/pkuas/debug.log","a")
 #file_handler=FileHandler("/var/www/hello/debug.log","a")
-file_handler.setLevel(logging.WARNING)
+file_handler.setLevel(logging.NOTSET)
 app.logger.addHandler(file_handler)
+app.logger.error("Debug BEGIN!!!!!!!\n")
+

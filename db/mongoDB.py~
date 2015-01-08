@@ -1,0 +1,57 @@
+#!/usr/bin/python
+                                                                
+
+import pymongo
+import sys
+
+from bson import ObjectId
+
+class mongoDB:
+
+    def __init__(self, db):
+        client = pymongo.MongoClient('127.0.0.1', 27017)
+        self.db = client[db]
+    
+    def insert(self, collection, document):
+        collection = self.db[collection]
+        collection.insert(document)
+        
+    def update(self, collection, post):
+        collection = self.db[collection]
+        OID = post["_id"]
+        post.pop("_id")
+        collection.update({"_id":OID},{"$set":post})
+    
+    def find_KV(self, collection, key, val):
+        posts = self.db[str(collection)].find({key : val})
+        ret = []
+        for post in posts:
+            ret.append(post)
+        return ret
+    
+    def find_LT(self, collection, key, val):
+        posts = self.db[str(collection)].find({str(key) : {'$lte' : val}})
+        ret = []
+        for post in posts:
+            ret.append(post)
+        return ret
+        
+    def find_GT(self, collection, key, val):
+        posts = self.db[str(collection)].find({str(key) : {'$gte' : val}})
+        ret = []
+        for post in posts:
+            ret.append(post)
+        return ret
+    
+    def find_scope(self, collection, key, low, high):
+        posts = self.db[str(collection)].find({str(key) : {'$lte' : high, "$gte" : low}})
+        ret = []
+        for post in posts:
+            ret.append(post)
+        return ret
+        
+    def find(self, tp, dic):
+        ret = []
+        return ret
+    
+    

@@ -1,0 +1,15 @@
+from test_api import test
+test = test()
+
+test.test__AND__()
+
+
+
+
+#test
+
+test.test_find_scope()
+test.test__LT__()
+test.test__GT__()
+test.test__EQ__()
+
