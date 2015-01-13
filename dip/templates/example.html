@@ -1,8 +1,4 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
     <meta charset="utf-8">
 
     <title>QA Central</title>
@@ -85,7 +81,20 @@
               stime.html("<h4>It is now: " + formattedTime + "</h4>");
          }
       </script>
-  </head>
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
   <body>
 
     <div class="navbar navbar-fixed-top">
@@ -97,7 +106,7 @@
             <span class="icon-bar"></span>
           </a>
 
-          <a class='brand'>QA Central</a>
+          <a class="brand">QA Central</a>
  
           <div class="nav-collapse">
             <ul class="nav">
@@ -106,7 +115,7 @@
             </ul>
             
             <ul class="nav pull-right">
-<li><a>Welcome,  Feixue</a></li>&nbsp;&nbsp;<a class='btn btn-primary' href=/qacentral/logoff.php>Logout</a>        	</ul>
+<li><a>Welcome,  Feixue</a></li>&nbsp;&nbsp;<a class="btn btn-primary" href="/qacentral/logoff.php">Logout</a>        	</ul>
 
           </div><!--/.nav-collapse -->
         </div>
@@ -116,22 +125,134 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span2">    
-           <div class="well sidebar-nav" id="sidebar"></div>
+           <div class="well sidebar-nav" id="sidebar">
+
+          <div class="well">  
+            <ul class="nav nav-list">   
+              <li class="active"><a href="#">Resources</a></li>  
+              <li class="extension"><a href="resource/systemAdd.php">Add</a></li>
+              <li class="extension"><a href="resource/systemManage.php">Manage</a></li>
+              <li class="extension"><a href="resource/systemCheckout.php">Checkout</a></li>
+              <li class="extension"><a href="resource/systemMonitor.php">Monitor</a></li>
+
+              <li class="divider"></li>
+
+
+              <li class="active"><a href="#">Tests Execution</a></li>
+              <li id="test-header" class="nav-header"><b>TEST SUITES</b></li>
+              <li>
+                <ul id="test-suites" class="nav sub-level">
+                  <li class="extension"><a href="job/jobAdd_1.php">Add Job</a></li>
+                  <li class="extension"><a href="job/jobManagement.php">Manage Job</a></li>
+                  <li class="extension"><a href="job/jobReplication.php">Replicate Job</a></li>
+                  <li class="extension"><a href="reports/jobReports.php">Job Reports</a></li>
+               </ul>
+              </li>
+
+              <li class="divider"></li>
+
+              <li class="active"><a href="#">Manage Tests</a></li>
+              <li class="extension"><a href="jaas/add_tests.php">Add Tests</a>
+              </li><li class="extension"><a href="jaas/view_tests.php">View Tests</a>
+              </li><li class="extension"><a href="jaas/modify_tests.php">Modify Tests</a>
+                  
+              </li><li class="divider"></li>
+              <li class="active"><a href="#">Test Service Request</a></li>
+              <li class="extension"><a href="job/tsRequestAdd.php">Add Requests</a>
+              </li><li class="extension"><a href="job/tsRequestView.php">View Requests</a>
+                  
+           </li></ul>  
+          </div><!--/.well -->  
+
+
+<script type="text/javascript">
+$(function() {
+  /*
+  $('#test-header').hover(function() {
+      $('#test-suites').slideDown('slow');
+   }, function() {
+      $('#test-suites').slideUp('slow');
+   }).css({   
+           'position' : 'relative',
+           'left' : '20px',
+           'top' : '0px'
+   });
+ */
+   $('#test-header').on('click', function() {
+      $('#test-suites').toggle('slow')
+                       .children().css({
+                            'position' : 'relative',
+                            'left' : '20px',
+                            'top' : '0px',
+                            'color': '#0088CC'
+                       });
+
+     });
+ });
+</script>
+
+
+</div>
         </div>
         <div class="span10">
-            <div id="content"></div>
+            <div id="content"><h3 class="page-title">Welcome to QA Central</h3><br>
+<div class="nav-tabs-container">
+  <div class="tabbable">  
+    <ul class="nav nav-tabs">   
+    
+    <li class="data active"><a href="#1" data-toggle="tab">General</a></li>  
+    <li class="data"><a href="#jobRequest" data-toggle="tab">Job Requests</a></li>
+    <li class="data"><a href="#resources" data-toggle="tab">My Resource</a></li>
+    <li class="data"><a href="#3" data-toggle="tab">Test Plans</a></li>
+    
+    </ul>  
+    <div class="tab-content">  
+        <div class="tab-pane active" id="1">
+            <!-- a href="http://iweb.datadomain.com/releases/">releases</a -->
+            <!-- iframe src="http://rubyrocks.chaos.local/rp/results.php?build=395603" width="80%" height="200"></iframe --> 
+        </div>
+        
+        <div class="tab-pane" id="jobRequest">
+            
+          <div class="tabbable tabs-below">
+            <div class="tab-content">
+              <div class="tab-pane active" id="one_">            
+<span><h4 class="status-Complete">Most Recent Tasks</h4>      
+
+              </span></div>
+              <div class="tab-pane" id="two_" <span=""><h4 class="status-Complete">Most Recent Tasks</h4>                    
+              </div>  
+            </div>      
+         <ul class="nav nav-tabs">
+          <li class="active"><a href="#one_" data-toggle="tab">User</a></li>
+          <li><a href="#two_" data-toggle="tab">Team</a></li>
+        </ul></div>
+     </div>        
+        <div class="tab-pane " id="resources">
+<span><h4 class="status-Complete">Live Systems</h4><span><h4 class="status-Complete">Down Systems</h4>               
+        </span></span></div>  
+      
+        <div class="tab-pane" id="3">
+        </div>
+    </div>          
+  </div>
+</div>
+
+<br><br>
+
+</div>
         </div>       
       </div> <!-- end row -->
-      <div id="serverData">Server Time:</div>
+      <div id="serverData">Server time: 07:27:41 PST</div>
       <hr>      
       <footer>
-      <p align=right style="font-size:12px"><font color=grey style="text-transform:uppercase">&copy;
-      <script type="text/javascript"> var d = new Date(); document.write(d.getFullYear()); </script>
+      <p align="right" style="font-size:12px"><font color="grey" style="text-transform:uppercase">©
+      <script type="text/javascript"> var d = new Date(); document.write(d.getFullYear()); </script>2015
        EMC Corporation. All rights reserved.</font>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.emc.com/includes/legal/legal-information.htm" target="_blank">Legal Info</a>
       </p>
       </footer>
     </div> <!-- /container -->    
-</body>
+
 <script type="text/javascript">
    if(typeof(EventSource)!=="undefined") {
         var eSource = new EventSource("servertime.php");
@@ -145,4 +266,5 @@
        document.getElementById("serverData").innerHTML = "Whoops! Your browser doesn't receive server-sent events.";
    }
 </script>
-</html>
+
+<div class="preloader" style="display: none;"></div><style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
