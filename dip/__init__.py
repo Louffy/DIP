@@ -30,7 +30,7 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 data_types=['code_log']
 log_types=['log']
 
-file_handler=FileHandler("/var/pkuas/debug.log","a")
+file_handler=FileHandler("./debug.log","a")
 #file_handler=FileHandler("/var/www/hello/debug.log","a")
 file_handler.setLevel(logging.NOTSET)
 app.logger.addHandler(file_handler)

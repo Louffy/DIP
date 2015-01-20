@@ -13,33 +13,59 @@ data_schama={
     'git':['vcs','repo','n_dev','n_cmt','begin_t','end_t','loc']
 }
 
-
-
-
-
 @app.route('/user/<username>',methods=['GET'])
 def show_user_profile(username):
     zfx=request.args.get('zfx')
     return 'User is %s' % zfx
 
-@app.route('/user/list',methods=['GET'])
-def list():
-	search = False
-	q = request.args.get('q')
-	if q:
-		search = True
-	try:
-		page = int(request.args.get('page', 1))
-	except ValueError:
-		page = 1
+@app.route('/data/list',methods=['GET'])
+def data_list():
+    #console.log("data start")
+    #name=request.args.get('type')
+    name=request.args.get('type')
+    c_data=[]
+    #return render_template('showdata.html',entries=entries)
+    search = False
+    q = request.args.get('q')
+    if q:
+        search = True
+    try:
+        page = int(request.args.get('page', 1))
+    except ValueError:
+        page = 1
+    per_page=10
+    logging.info(name)
+    if search == True:
+       # console.log("search==True")
+        data=db.findQuery(name,q)
+    else:
+        data = db.findAll(name)
 
-	users = ['a','a','a','a','a','a','a','a','a','a','a','a','b','b','b','b','b','b','b','b','b','b','b','b','b']
-	print users
-	pagination = Pagination(page=page, total=len(users), search=search, record_name='users',)
-	return render_template('hello.html',
-                           users=users,
+    index=(page-1)*per_page
+    delta=per_page
+    if (len(data)-index)/per_page == 0:
+        delta=len(data)-index
+
+  
+
+    for i in range( index, index+delta):
+        c_data.append(data[i])
+    if search == True:
+      pagination = Pagination(page=page, total=len(data), search=search, record_name='Id',found=len(data),search_msg=q,)
+    else:
+      pagination = Pagination(page=page, total=len(data), search=search, record_name='Id',)
+
+    keys=[]
+    if len(c_data) > 0:
+      keys=c_data[0].keys()
+    return render_template('list.html',
+                           c_data=c_data,
+                           keys=keys,
                            page=page,
+                           per_page=per_page,
+                           total=len(data),
                            pagination=pagination,
+                           name=name,
                            )
 
 
